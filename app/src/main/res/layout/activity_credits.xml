@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/two_tigers">
+    <TextView android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="Awale 2017"
+        android:layout_marginBottom="@dimen/credits_margin"
+        android:layout_marginTop="@dimen/credits_margin"
+        android:textColor="@color/credits_color"
+        android:textSize="@dimen/credits_font_size" />
+    <TextView android:id="@+id/zstar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/copyright"
+        android:text="Machine Intelligence For You"
+        android:layout_marginBottom="@dimen/credits_margin"
+        android:layout_marginTop="@dimen/credits_margin"
+        android:textColor="@color/credits_color"
+        android:textSize="@dimen/credits_font_size" />
+    <TextView android:id="@+id/dai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/zstar"
+        android:text="MIFY"
+        android:layout_marginBottom="@dimen/credits_margin"
+        android:layout_marginTop="@dimen/credits_margin"
+        android:textColor="@color/credits_color"
+        android:textSize="@dimen/credits_font_size" />
+    <ImageView
+        android:src="@drawable/logo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/copyright"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Parisius H."
+        android:textColor="@color/credits_color"
+        android:textSize="15sp" />
+</RelativeLayout>
