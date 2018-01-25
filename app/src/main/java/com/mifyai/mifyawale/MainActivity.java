@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         //ReportSender.install(getApplicationContext());
-
         setContentView(R.layout.activity_main);
 
        ViewTools.inflateView(this, R.layout.awale_layout);

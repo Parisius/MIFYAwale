@@ -13,5 +13,5 @@ public interface ArtificialIntelligence {
      *
      * @return the best position or <code>Short.MIN_VALUE</code>, if none is found
      */
-    public short searchBestPlay(Awale awale, short side);
+    short searchBestPlay(Awale awale, short side);
 }
