@@ -27,8 +27,7 @@ import java.util.Random;
 public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
     class AwaleThread extends Thread implements Awale.AwaleListener {
 
-        private static final int    SEED_HEIGHT    = 40;
-        private static final int    SEED_WIDTH     = 40;
+
 
         private Typeface typeFace;
         public boolean              run            = false;
@@ -248,7 +247,10 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
         public void setRunning(boolean b) {
             this.run = b;
         }
-
+        private int awaleimg;
+        private int awaleimgh;
+        private   int    SEED_HEIGHT    = 120;
+        private   int    SEED_WIDTH     = 120;
         /* Callback invoked when the surface dimensions change. */
         public void setSurfaceSize(int width, int height) {
             // synchronized to make sure these all change atomically
@@ -256,6 +258,11 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
 
                 this.width = width;
                 this.height = height;
+
+
+                this.SEED_WIDTH=(int) (this.width/13);
+                this.SEED_HEIGHT=(int) (this.width/13);
+
                 this.backgroundImage = Bitmap.createScaledBitmap(
                         this.backgroundImage, width, height, true);
                 this.oneSeedImage = Bitmap.createScaledBitmap(
@@ -279,15 +286,22 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
                 this.lotOfSeedsImage_3 = Bitmap.createScaledBitmap(
                         this.lotOfSeedsImage_3, SEED_WIDTH, SEED_HEIGHT, true);
                 this.pointSeedImage = Bitmap.createScaledBitmap(
-                        this.oneSeedImage, 20, 20, true);
-                this.stopImage = Bitmap.createScaledBitmap(this.stopImage, 50,
-                        50, true);
+                        this.oneSeedImage, SEED_WIDTH, SEED_HEIGHT, true);
+                this.stopImage = Bitmap.createScaledBitmap(this.stopImage, SEED_WIDTH,
+                        SEED_HEIGHT, true);
                 this.stopButtonX = this.width - this.stopImage.getWidth() - 5;
                 this.stopButtonY = 5;
 
+
+                System.out.print(this.width +" et "+this.awaleImage.getWidth() );
+                this.awaleimg=this.awaleImage.getWidth();
+                this.awaleimgh=this.awaleImage.getHeight();
                 buildBitmaps();
             }
         }
+
+
+
 
         /**
          * Handles a key-up event.
@@ -306,14 +320,13 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
 
             return handled;
         }
-
+        private int pas=(int) (170);
         private final Paint paint          = new Paint(
                 Paint.ANTI_ALIAS_FLAG);
-
-        private final int                    xCoordinates[] = { 36, 100, 162,
-                228, 294,
-                362 };
-        private final int                    yCoordinates[] = { 34, 103 };
+        private final int                    xCoordinates[] = { (int) ((this.width-this.awaleimg) / 2), (int) ((this.width-this.awaleimg) / 2), (int) ((this.width-this.awaleimg) / 2),
+                (int) ((this.width-this.awaleimg) / 2), (int) ((this.width-this.awaleimg) / 2),
+                (int) ((this.width-this.awaleimg) / 2) };
+        private final int                    yCoordinates[] = { (int) ((this.height -this.awaleimgh) / 2), (int) ((this.height -this.awaleimgh) / 2) };
         private int                          yOffset;
         private int                          xOffset;
 
@@ -351,6 +364,20 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
          */
         private void doDraw(Canvas canvas) {
 
+
+//
+//            this.xCoordinates[5]=(int) (this.width/17.5);
+//            this.xCoordinates[4]=(int) (this.width/6.5);
+            this.xCoordinates[5]=(int) (this.awaleimg/13);
+            this.xCoordinates[4]=(int) (this.awaleimg/4);
+            this.xCoordinates[3]=(int) (this.awaleimg/2.5);
+            this.xCoordinates[2]=(int) (this.awaleimg/1.78);
+            this.xCoordinates[1]=(int) (this.awaleimg/1.36);
+            this.xCoordinates[0]=(int) (this.awaleimg/1.11);
+
+            this.yCoordinates[0]=(int) (this.awaleimgh/1.31);
+            this.yCoordinates[1]=(int) (this.awaleimgh/4.6);
+
             this.paint.setTypeface(this.typeFace);
             this.yOffset = (this.height - this.awaleImage.getHeight()) / 2;
             this.xOffset = (this.width - this.awaleImage.getWidth()) / 2;
@@ -375,7 +402,7 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
                         this.selectedPaint);
             }
 
-            this.paint.setTextSize(14);
+            this.paint.setTextSize(40);
             short seedCount = 0;
             Bitmap bitmap;
             for (short i = 0; i < length; i++) {
@@ -392,8 +419,8 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
                 this.paint.setColor(this.player1Color);
                 canvas.drawText(Short.toString(seedCount), this.xOffset
                                 + this.xCoordinates[i] - 6, this.yOffset
-                                + this.yCoordinates[0] - SEED_HEIGHT / 2 - 20,
-                        this.paint);
+                                + this.yCoordinates[0] + SEED_HEIGHT / 1 ,
+                        this.paint);   //ici
 
                 // draw seeds for the second player
                 bitmap = this.bitmaps[1][i];
@@ -409,8 +436,8 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
                 this.paint.setColor(this.player2Color);
                 canvas.drawText(Short.toString(seedCount), this.xOffset
                                 + this.xCoordinates[i] - 6, this.yOffset
-                                + this.yCoordinates[1] + SEED_HEIGHT / 2 + 30,
-                        this.paint);
+                                + this.yCoordinates[1] - (int)(SEED_HEIGHT/1.43),
+                        this.paint);   //ici
             }
 
             // draw first player points
