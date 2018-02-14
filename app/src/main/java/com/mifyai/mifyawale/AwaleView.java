@@ -442,12 +442,12 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
 
             // draw first player points
             this.paint.setColor(this.player1Color);
-            this.paint.setUnderlineText(AwaleView.this.awale.currentSide == 0);
-            canvas.drawText(this.player1String + " "
-                    + AwaleView.this.awale.points[0], 5, 21, this.paint);
+//            this.paint.setUnderlineText(AwaleView.this.awale.currentSide == 0);
+            canvas.drawText(this.player2String + " "
+                    + AwaleView.this.awale.points[1], 5, 50, this.paint);
             this.paint.setUnderlineText(false);
             Rect rect = new Rect();
-            this.paint.getTextBounds(this.player1String, 0, this.player1String
+            this.paint.getTextBounds(this.player2String, 0, this.player2String
                     .length(), rect);
             int x = 0;
             if (this.pointSeedImage != null) {
@@ -461,11 +461,11 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
             // draw second player points
             this.paint.setColor(this.player2Color);
             this.paint.setUnderlineText(AwaleView.this.awale.currentSide == 1);
-            canvas.drawText(this.player2String + " "
-                    + AwaleView.this.awale.points[1], 5, this.height - 15
+            canvas.drawText(this.player1String + " "
+                    + AwaleView.this.awale.points[0], 5, this.height - 15
                     - rect.height(), this.paint);
             this.paint.setUnderlineText(false);
-            this.paint.getTextBounds(this.player2String, 0, this.player1String
+            this.paint.getTextBounds(this.player1String, 0, this.player1String
                     .length(), rect);
             x = 0;
             if (this.pointSeedImage != null) {

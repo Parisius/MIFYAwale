@@ -70,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             pi = pm.getPackageInfo(getPackageName(), 0);
             TextView demoVersionButton = (TextView) findViewById(R.id.demo_version);
-            demoVersionButton.setText(getString(R.string.demo_version) + " " + pi.versionName);
+//            demoVersionButton.setText(getString(R.string.demo_version) + " " + pi.versionName);
+            demoVersionButton.setText("Version 1.0");
         } catch (PackageManager.NameNotFoundException e) {
         }
         super.onCreate(savedInstanceState);
