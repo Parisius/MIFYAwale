@@ -111,7 +111,10 @@ public class PlayActivity extends Activity {
 
                     @Override
                     public void onClick(View v) {
+
+                        awaleView.surfaceDestroyed(awaleView.getHolder());
                         PlayActivity.this.finish();
+//                        startActivity(new Intent(PlayActivity.this, MainActivity.class));
                     }
                 });
 
@@ -169,8 +172,22 @@ public class PlayActivity extends Activity {
 
     @Override
     protected void onStop() {
+        if (this.winMediaPlayer != null) {
+            this.winMediaPlayer.release();
+        }
         //notifyGame();
+        awaleView.surfaceDestroyed(awaleView.getHolder());
+        finish();
         super.onStop();
+    }
+
+    protected void onPause(){
+        if (this.winMediaPlayer != null) {
+            this.winMediaPlayer.release();
+        }
+        awaleView.surfaceDestroyed(awaleView.getHolder());
+        finish();
+        super.onPause();
     }
 
 //    private void notifyGame() {
@@ -233,10 +250,12 @@ public class PlayActivity extends Activity {
 
     @Override
     protected void onDestroy() {
+        awaleView.surfaceDestroyed(awaleView.getHolder());
         cancelPendingItent();
         if (this.winMediaPlayer != null) {
             this.winMediaPlayer.release();
         }
+        awaleView.surfaceDestroyed(awaleView.getHolder());
         super.onDestroy();
     }
 }

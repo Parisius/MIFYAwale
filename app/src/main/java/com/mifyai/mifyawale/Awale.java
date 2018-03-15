@@ -229,7 +229,7 @@ public class Awale {
      * Indicates if the player can play on this case.
      */
     public boolean canPlayHere(short side, short position) {
-        return this.currentSide == side && this.territory[side][position] != 0;
+        return this.currentSide == side && this.territory[side][position] != 0 && !isATakeOver(side, position);
     }
 
     private void fireChanged(short eventType, short row, short column) {
