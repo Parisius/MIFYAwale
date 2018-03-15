@@ -12,6 +12,9 @@ public class GameManager {
 
     /** current awale managed by this class **/
     public Awale                         awale;
+//    private final ArtificialIntelligence artificialIntelligence = new AlphaBeta();
+//    private final ArtificialIntelligence artificialIntelligence = new Slh();
+//    private final ArtificialIntelligence artificialIntelligence = new Mlvelocity();
     private final ArtificialIntelligence artificialIntelligence = new Obf();
     private final Activity activity;
     private boolean                      isPlayer1_Computer     = false;
