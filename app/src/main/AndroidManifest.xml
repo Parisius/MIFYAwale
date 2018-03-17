@@ -35,6 +35,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".OpponentActivity"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_opponent"
             android:theme="@style/MawaleTheme"></activity>
     </application>

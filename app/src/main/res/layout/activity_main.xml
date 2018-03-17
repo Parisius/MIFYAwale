@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:text="@string/demo_version" />
+        android:text="Version 1.0" />
 
     <ImageView
         android:src="@drawable/logo2"
