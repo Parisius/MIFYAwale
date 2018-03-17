@@ -2,6 +2,9 @@ package com.mifyai.mifyawale;
 
 import android.app.Activity;
 import android.os.AsyncTask;
+import android.util.Log;
+
+import static com.mifyai.mifyawale.BuildConfig.DEBUG;
 
 /**
  * This class manages game progress.
@@ -15,7 +18,8 @@ public class GameManager {
 //    private final ArtificialIntelligence artificialIntelligence = new AlphaBeta();
 //    private final ArtificialIntelligence artificialIntelligence = new Slh();
 //    private final ArtificialIntelligence artificialIntelligence = new Mlvelocity();
-    private final ArtificialIntelligence artificialIntelligence = new Obf();
+//    private final ArtificialIntelligence artificialIntelligence = new Obf();
+    private ArtificialIntelligence artificialIntelligence;
     private final Activity activity;
     private boolean                      isPlayer1_Computer     = false;
     private boolean                      isPlayer2_Computer     = true;
@@ -157,9 +161,25 @@ public class GameManager {
      * Creates a standard game manager for the given awale and notifies users
      * via the given activity.
      */
-    public GameManager(Activity activity, Awale awale) {
+    public GameManager(Activity activity, Awale awale,int nIA) {
         this.activity = activity;
         this.awale = awale;
+
+            if(nIA==1)
+            {
+                System.out.println("Ici cest " +"OBF");
+                this.artificialIntelligence = new Obf();
+            }
+            else if(nIA==2)
+            {
+                System.out.println("Ici cest" +nIA);
+                this.artificialIntelligence = new Mlvelocity();
+            }
+            else if(nIA==3)
+            {
+                System.out.println("Ici cest" +nIA);
+                this.artificialIntelligence = new Slh();
+            }
         // for tests purpose
         // this.awale.territory[0] = new short[] { 0, 0, 0, 0, 0, 1 };
         // this.awale.territory[1] = new short[] { 0, 1, 1, 1, 1, 1 };

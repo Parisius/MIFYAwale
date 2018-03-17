@@ -27,6 +27,8 @@ import java.util.Random;
  */
 
 public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
+    private String IAName;
+
     class AwaleThread extends Thread implements Awale.AwaleListener {
 
 
@@ -67,13 +69,14 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
         private MediaPlayer takeMediaPlayer;
         private MediaPlayer         dropMediaPlayer;
 
-        public AwaleThread(SurfaceHolder surfaceHolder, Context context) {
+        public AwaleThread(SurfaceHolder surfaceHolder, Context context,String IAName) {
             this.takeMediaPlayer = MediaPlayer.create(context, R.raw.take);
             this.dropMediaPlayer = MediaPlayer.create(context, R.raw.drop);
             this.player1Color = getResources().getColor(R.color.player_1);
             this.player2Color = getResources().getColor(R.color.player_2);
             this.player1String = getContext().getString(R.string.player_1);
-            this.player2String = getContext().getString(R.string.player_2);
+//            this.player2String = getContext().getString(R.string.player_2);
+            this.player2String = IAName;
             this.player1TurnString = getContext().getString(
                     R.string.player_1_turn);
             this.player2TurnString = getContext().getString(
@@ -682,7 +685,7 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceCreated(SurfaceHolder holder) {
         // start the thread here so that we don't busy-wait in run()
         // waiting for the surface to be created
-        this.thread = new AwaleThread(holder, getContext());
+        this.thread = new AwaleThread(holder, getContext(),this.IAName);
         this.thread.setRunning(true);
         this.thread.start();
     }
@@ -708,6 +711,10 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
      */
     public void setAwale(Awale awale) {
         this.awale = awale;
+    }
+    public void setIAName(String Nom_IA)
+    {
+        this.IAName=Nom_IA;
     }
 
 }

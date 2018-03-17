@@ -37,12 +37,21 @@ public class MainActivity extends AppCompatActivity {
         Typeface africanTypeFace = Typeface.createFromAsset(getAssets(),
                 "fonts/african.ttf");
 
+//        Button newGameButton = (Button) findViewById(R.id.new_game_button);
+//        newGameButton.setTypeface(africanTypeFace);
+//        newGameButton.setOnClickListener(new View.OnClickListener() {
+//            @Override                                                                 //C'était l'action originelle. J'ai dupliqué et modifié en bas.
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, PlayActivity.class));
+//            }
+//        });
+
         Button newGameButton = (Button) findViewById(R.id.new_game_button);
         newGameButton.setTypeface(africanTypeFace);
         newGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PlayActivity.class));
+                startActivity(new Intent(getApplicationContext(),OpponentActivity.class));
             }
         });
 

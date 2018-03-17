@@ -50,10 +50,28 @@ public class PlayActivity extends Activity {
         //cancelPendingItent();
         short size = 6;
         this.awale = new Awale((short) size);
-        this.gameManager = new GameManager(this, this.awale);
+        int nIA=Integer.parseInt(getIntent().getStringExtra("ia"));
+        this.gameManager = new GameManager(this, this.awale,nIA);
         View inflateView = ViewTools.inflateView(this, R.layout.awale_layout);
         this.awaleView = (AwaleView) inflateView.findViewById(R.id.territory);
         this.awaleView.setAwale(new Awale(this.awale));
+
+        if(nIA==1)
+        {
+            this.awaleView.setIAName("OBF (IA) :");
+        }
+
+        if(nIA==2)
+        {
+            this.awaleView.setIAName("Mlvelocity (IA) :");
+        }
+
+        if(nIA==3)
+        {
+            this.awaleView.setIAName("SLH (IA) :");
+        }
+
+
         setContentView(inflateView);
         restoreState(savedInstanceState);
         this.winMediaPlayer = MediaPlayer.create(this, R.raw.win);

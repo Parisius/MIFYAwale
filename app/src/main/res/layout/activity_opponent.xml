@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background">
+
+    <TextView android:id="@+id/awale_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="AWALE"
+        android:textSize="@dimen/title_font_size"
+        android:layout_marginBottom="@dimen/title_margin"
+        android:layout_marginTop="@dimen/title_margin"
+        android:textColor="@color/awale_title_color" />
+
+    <RelativeLayout android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/awale_title"
+        android:id="@+id/relativeLayout">
+
+        <!--
+            <Button android:id="@+id/options_button"
+            android:text="@string/options"
+        -->
+        <!--
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+        -->
+        <!--			android:layout_below="@id/new_game_button"-->
+        <!--			android:layout_centerHorizontal="true" />-->
+    </RelativeLayout>
+
+    <ImageView
+        android:src="@drawable/logo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/imageView"
+        android:layout_alignTop="@+id/awale_title"
+        android:layout_alignParentLeft="true"
+        android:contentDescription=""/>
+
+
+    <Button
+        android:id="@+id/slh_button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MlVelocity_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/button_selector"
+        android:text="@string/slh_choice"
+        android:textColor="@color/awale_button_text_color"
+        android:textSize="@dimen/button_font_size" />
+
+
+    <Button
+        android:id="@+id/obf_button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/MlVelocity_button"
+        android:layout_alignStart="@+id/MlVelocity_button"
+        android:layout_centerVertical="true"
+        android:background="@drawable/button_selector"
+        android:text="@string/obf_choice"
+        android:textColor="@color/awale_button_text_color"
+        android:textSize="@dimen/button_font_size" />
+
+    <Button
+        android:id="@+id/MlVelocity_button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/slh_button"
+        android:layout_alignStart="@+id/slh_button"
+        android:layout_below="@+id/obf_button"
+        android:background="@drawable/button_selector"
+        android:text="@string/mlvelocity_choice"
+        android:textColor="@color/awale_button_text_color"
+        android:textSize="@dimen/button_font_size" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/awale_title"
+        android:layout_centerHorizontal="true"
+        android:text="Choisissez votre adversaire:"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/awale_title_color"
+        android:textSize="@dimen/choice_font_size"
+        tools:text="Choisissez votre adversaire:" />
+
+</RelativeLayout>
