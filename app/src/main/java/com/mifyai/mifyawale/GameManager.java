@@ -86,7 +86,7 @@ public class GameManager {
                 System.out.println("AGO "+this.NombreTotalDeGraine(awale));
                 return ACTION_GAME_OVER;
             }
-            if((this.NombreTotalDeGraine(awale)<6) && (!this.isIAWinner(awale)))
+            if(((this.NombreTotalDeGraine(awale)<6) && (!this.isIAWinner(awale))) || (awale.points[0]>24))
             {
                 System.out.println("ACL");
                 return ACTION_COMPUTER_LOST;
