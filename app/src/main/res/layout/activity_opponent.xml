@@ -33,24 +33,24 @@
             android:textSize="@dimen/button_font_size" />
 
         <Button
-            android:id="@+id/slh_button"
+            android:id="@+id/MlVelocity_button"
             android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_below="@+id/obf_button"
             android:layout_centerHorizontal="true"
             android:background="@drawable/button_selector"
-            android:text="@string/slh_choice"
+            android:text="@string/mlvelocity_choice"
             android:textColor="@color/awale_button_text_color"
             android:textSize="@dimen/button_font_size" />
 
         <Button
-            android:id="@+id/MlVelocity_button"
+            android:id="@+id/slh_button"
             android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/slh_button"
+            android:layout_below="@+id/MlVelocity_button"
             android:background="@drawable/button_selector"
             android:layout_centerHorizontal="true"
-            android:text="@string/mlvelocity_choice"
+            android:text="@string/slh_choice"
             android:textColor="@color/awale_button_text_color"
             android:textSize="@dimen/button_font_size" />
 
