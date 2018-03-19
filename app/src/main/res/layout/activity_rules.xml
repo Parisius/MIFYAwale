@@ -1,6 +1,6 @@
 <RelativeLayout android:layout_width="fill_parent"
     android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/background_elephant">
+    android:background="@drawable/rules">
 
     <TextView android:id="@+id/awale_rules"
         android:layout_width="wrap_content"
@@ -10,7 +10,7 @@
         android:textSize="@dimen/title_font_size"
         android:layout_marginBottom="@dimen/title_margin"
         android:layout_marginTop="@dimen/title_margin"
-        android:textColor="@color/awale_title_color" />
+        android:textColor="@color/awale_rule_color" />
     <ScrollView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/awale_rules">

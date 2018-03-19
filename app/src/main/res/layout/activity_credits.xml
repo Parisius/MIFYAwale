@@ -40,14 +40,14 @@
         android:layout_centerVertical="true"
         android:layout_alignRight="@+id/copyright"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="Parisius H."
-        android:textColor="@color/credits_color"
-        android:textSize="15sp" />
+    <!--<TextView-->
+        <!--android:id="@+id/textView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:text="Parisius H. H"-->
+        <!--android:textColor="@color/credits_color"-->
+        <!--android:textSize="15sp" />-->
 </RelativeLayout>

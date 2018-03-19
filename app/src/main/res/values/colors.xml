@@ -5,6 +5,7 @@
     <color name="text_button_color">#032901</color>
     <color name="awale_button_text_color">#dbc98e</color>
     <color name="awale_title_color">#000000</color>
+    <color name="awale_rule_color">#FFFFFF</color>
     <color name="credits_color">#ffffff</color>
     <color name="rules_color">#FFFFFF</color>
 </resources>
