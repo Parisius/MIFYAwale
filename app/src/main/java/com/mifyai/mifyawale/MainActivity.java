@@ -85,13 +85,4 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
     }
-    // @Override
-    // protected void onNewIntent(Intent intent) {
-    // boolean mustResume = intent.getExtras().getBoolean(RESUME_KEY, false);
-    // if (mustResume) {
-    // startActivity(new Intent(MainActivity.this, PlayActivity.class));
-    // }
-    // cancelPendingItent();
-    // super.onNewIntent(intent);
-    // }
 }

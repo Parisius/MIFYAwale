@@ -3,9 +3,9 @@
     <string name="app_name">MIFYAwale</string>
     <string name="new_game">NEW GAME</string>
     <string name="start_game">START GAME</string>
-    <string name="slh_choice">3-SLH</string>
-    <string name="mlvelocity_choice">2-MlVelocity</string>
-    <string name="obf_choice">1-OBF</string>
+    <string name="slh_choice">SLH</string>
+    <string name="mlvelocity_choice">MLVelocity</string>
+    <string name="obf_choice">OBF</string>
     <string name="rules">RULES</string>
     <string name="options">OPTIONS</string>
     <string name="credits">CREDITS</string>

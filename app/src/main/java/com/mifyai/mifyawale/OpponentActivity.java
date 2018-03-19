@@ -1,13 +1,12 @@
 package com.mifyai.mifyawale;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class OpponentActivity extends AppCompatActivity {
 
@@ -15,6 +14,15 @@ public class OpponentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opponent);
+
+        Typeface outOfAfricaTypeFace = Typeface.createFromAsset(getAssets(),
+                "fonts/out_of_africa.ttf");
+
+        TextView awaleTitleTextView = (TextView) findViewById(R.id.awale_title);
+        awaleTitleTextView.setTypeface(outOfAfricaTypeFace);
+
+        Typeface africanTypeFace = Typeface.createFromAsset(getAssets(),
+                "fonts/african.ttf");
 
         Button ObfGameButton = (Button) findViewById(R.id.obf_button);
         ObfGameButton.setOnClickListener(new View.OnClickListener() {

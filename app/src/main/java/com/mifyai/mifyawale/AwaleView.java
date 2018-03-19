@@ -87,7 +87,7 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
 
             Resources res = context.getResources();
             this.backgroundImage = BitmapFactory.decodeResource(res,
-                    R.drawable.motif);
+                    R.drawable.tt);
             this.awaleImage = BitmapFactory.decodeResource(res,
                     R.drawable.awale);
             this.oneSeedImage = BitmapFactory.decodeResource(res,
@@ -110,7 +110,7 @@ public class AwaleView extends SurfaceView implements SurfaceHolder.Callback {
                     R.drawable.seeds_lot_2);
             this.lotOfSeedsImage_3 = BitmapFactory.decodeResource(res,
                     R.drawable.seeds_lot_3);
-            this.stopImage = BitmapFactory.decodeResource(res, R.drawable.stop);
+            this.stopImage = BitmapFactory.decodeResource(res, R.drawable.stop1);
             this.typeFace = Typeface.createFromAsset(context.getAssets(),
                     "fonts/african.ttf");
             setOnTouchListener(new OnTouchListener() {

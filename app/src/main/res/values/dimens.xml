@@ -5,7 +5,7 @@
     <dimen name="title_font_size">42dip</dimen>
     <dimen name="choice_font_size">30dip</dimen>
     <dimen name="credits_font_size">20dip</dimen>
-    <dimen name="title_margin">20dip</dimen>
+    <dimen name="title_margin">25dip</dimen>
     <dimen name="credits_margin">5dip</dimen>
     <dimen name="fab_margin">16dp</dimen>
 </resources>
