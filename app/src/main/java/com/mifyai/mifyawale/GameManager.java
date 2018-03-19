@@ -47,6 +47,28 @@ public class GameManager {
         private static final short ACTION_COMPUTER_LOST = 3;
         private static final short ACTION_NEXT_TURN     = 4;
 
+
+
+
+        private int NombreTotalDeGraine(Awale awale)    //JB
+        {
+            int n=0;
+            for(int i=0;i<2;i++)
+            {
+                for(int j=0;j<6;j++)
+                {
+                    n+=awale.territory[i][j];
+                }
+            }
+            return n;
+        }
+
+        private boolean isIAWinner(Awale awale)   //JB
+        {
+            return ((awale.points[1]>24) || ((awale.points[1]>awale.points[0]) && (NombreTotalDeGraine(awale)<6)));
+        }
+
+
         @Override
         protected Short doInBackground(Object... params) {
             Awale awale = (Awale) params[0];
@@ -57,6 +79,20 @@ public class GameManager {
             // if this is the computer we let him play, otherwise we verify
             // that the player
             // has chosen a correct case
+
+            System.out.println("Voici "+this.NombreTotalDeGraine(awale));
+            if(this.isIAWinner(awale))
+            {
+                System.out.println("AGO "+this.NombreTotalDeGraine(awale));
+                return ACTION_GAME_OVER;
+            }
+            if((this.NombreTotalDeGraine(awale)<6) && (!this.isIAWinner(awale)))
+            {
+                System.out.println("ACL");
+                return ACTION_COMPUTER_LOST;
+            }
+
+
             if ((awale.currentSide == 0 && GameManager.this.isPlayer1_Computer)
                     || (awale.currentSide == 1 && GameManager.this.isPlayer2_Computer)) {
                 // the current player is the computer
